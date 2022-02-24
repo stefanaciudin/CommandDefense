@@ -1,5 +1,4 @@
 #include "Week1Header.h"
-
 int Sum(int a, int b) { return a + b; }
 int Dif(int a, int b) { return a - b; }
 int Mul(int a, int b) { return a * b; }
@@ -48,7 +47,8 @@ void ParseSources()
 	printf("S = %d\n", S);
 }
 
-// Week 1 - using C API
+// Week 1 - using C API 
+//fopen, fscanf, fclose
 void ReadTopScore()
 {
     // open file "UserScores.txt"
@@ -58,4 +58,33 @@ void ReadTopScore()
     // print the name with biggest points
 
     // close file
+
+	FILE* f;
+	char name[200], name_max[200];
+	int score, score_max;
+	int i;
+	f = fopen("UsersScores.txt", "r");
+	fscanf(f, "%s", &name);
+	fscanf(f, "%d", &score);
+	for (i = 0; i < strlen(name); i++)
+		name_max[i] = name[i];
+	score_max = score;
+	while (!feof(f))
+	{
+		if (score > score_max)
+		{
+			for (i = 0; i < strlen(name); i++)
+				name_max[i] = ' ';
+			score_max = score;
+			for (i = 0; i < strlen(name); i++)
+				name_max[i] = name[i];
+		}
+		fscanf(f, "%s", &name);
+		fscanf(f, "%d", &score);
+	}
+
+	fclose(f);
+	printf("%s", name_max);
+	//cout << endl;
+	printf("%d", score_max);
 }
