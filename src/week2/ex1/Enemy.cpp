@@ -17,7 +17,7 @@ void Enemy::Move(EnemyDirection direction, int step)
 		location.y += step;
 		break;
 	case EnemyDirection::LeftDirection:
-		location.y -= step;
+		location.x -= step;
 		break;
 	case EnemyDirection::RightDirection:
 		location.x += step;

@@ -33,7 +33,7 @@ bool EnemyWave::setHealth(int health)
 {
 	if (health > 0)
 	{
-		health = Health;
+		Health=health;
 		return true;
 	}
 	else
@@ -47,5 +47,5 @@ float EnemyWave::getMoney() const
 
 void EnemyWave::setMoney(int money)
 {
-	money = Money;
+	Money=money;
 }

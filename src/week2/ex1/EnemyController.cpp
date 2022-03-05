@@ -5,8 +5,8 @@ void EnemyController::Init(int maximumEnemies, int step, Point initialLocation)
 {
 	maxEnemies=maximumEnemies;
 	stepSize=step;
-	initialLocation.x = startinLocation.x;
-	initialLocation.y = startinLocation.y;
+	startinLocation.x = initialLocation.x;
+	startinLocation.y = initialLocation.y;
 	alive = 0;
 	enemies = new Enemy[maximumEnemies];
 	for (int i = 0; i < maximumEnemies; i++)
