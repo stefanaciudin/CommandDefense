@@ -1,11 +1,11 @@
 #pragma once
 #include "carte.h"
 #include <vector>
+#include <functional>
 using namespace std;
 class Biblioteca
 {
 	int count;
-	//Carte* carti[100];
 	vector <Carte*> carti;
 public:
 	Biblioteca();
@@ -14,5 +14,5 @@ public:
 	vector <Carte*>::iterator begin() { return carti.begin(); }
 	vector <Carte*>::iterator end() { return carti.end(); }
 	operator int();
-	void PrintFilter(Carte fn);
+	void PrintFilter(function<bool(Carte*)> fn);
 };

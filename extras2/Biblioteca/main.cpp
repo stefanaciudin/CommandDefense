@@ -14,8 +14,12 @@ int main()
 	}
 	std::cout << "Numar de intrari in biblioteca: " << (int)b << std::endl;
 	std::cout << "Lista doar cu romane:" << std::endl;
-	//b.PrintFilter([](Carte* c)->bool {
-	//	// adaugati codul care determina daca o carte este un Roman
-	//	});
+	b.PrintFilter([](Carte* c)->bool 
+		{
+			if (dynamic_cast<Roman*>(c) != nullptr)
+				return true;
+			return false;
+		// adaugati codul care determina daca o carte este un roman
+		});
 	return 0;
 }
